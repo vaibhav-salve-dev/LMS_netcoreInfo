@@ -1,9 +1,7 @@
 import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
-  BarChart, Bar,
 } from 'recharts';
 import { progressData, skillProgress } from '../../data/mockData';
-import ProgressBar from '../ui/ProgressBar';
 
 export default function LearningProgress() {
   return (
@@ -20,9 +18,17 @@ export default function LearningProgress() {
         </select>
       </div>
 
-      <div className="h-64 -ml-4">
+      {/* 👇 Added outline-none + select-none + WebkitTapHighlightColor */}
+      <div
+        className="h-64 -ml-4 outline-none select-none"
+        style={{ WebkitTapHighlightColor: 'transparent' }}
+      >
         <ResponsiveContainer width="100%" height="100%">
-          <AreaChart data={progressData}>
+          <AreaChart
+            data={progressData}
+            style={{ outline: 'none' }}
+            tabIndex={-1}
+          >
             <defs>
               <linearGradient id="colorHours" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stopColor="#6366f1" stopOpacity={0.35} />
@@ -30,13 +36,34 @@ export default function LearningProgress() {
               </linearGradient>
             </defs>
             <CartesianGrid strokeDasharray="4 4" stroke="#e2e8f0" vertical={false} />
-            <XAxis dataKey="week" tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} />
-            <YAxis tick={{ fontSize: 11, fill: '#94a3b8' }} axisLine={false} tickLine={false} />
+            <XAxis
+              dataKey="week"
+              tick={{ fontSize: 11, fill: '#94a3b8' }}
+              axisLine={false}
+              tickLine={false}
+            />
+            <YAxis
+              tick={{ fontSize: 11, fill: '#94a3b8' }}
+              axisLine={false}
+              tickLine={false}
+            />
             <Tooltip
-              contentStyle={{ borderRadius: 12, border: '1px solid #e2e8f0', fontSize: 12 }}
+              contentStyle={{
+                borderRadius: 12,
+                border: '1px solid #e2e8f0',
+                fontSize: 12,
+                outline: 'none',
+              }}
               cursor={{ stroke: '#6366f1', strokeWidth: 1, strokeDasharray: '4 4' }}
             />
-            <Area type="monotone" dataKey="hours" stroke="#6366f1" strokeWidth={2.5} fill="url(#colorHours)" />
+            <Area
+              type="monotone"
+              dataKey="hours"
+              stroke="#6366f1"
+              strokeWidth={2.5}
+              fill="url(#colorHours)"
+              activeDot={{ r: 5, strokeWidth: 2, stroke: '#fff' }}
+            />
           </AreaChart>
         </ResponsiveContainer>
       </div>
