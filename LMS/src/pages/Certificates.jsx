@@ -1,7 +1,10 @@
 import { Award, Download, ExternalLink } from 'lucide-react';
 import { certificates } from '../data/mockData';
+import { useApp } from '../context/AppContext';
 
 export default function CertificatesPage() {
+  const { showToast } = useApp();
+
   return (
     <div className="max-w-[1400px] mx-auto space-y-6">
       <div>
@@ -18,7 +21,11 @@ export default function CertificatesPage() {
           {certificates.map((c) => (
             <div key={c.id} className="card overflow-hidden group">
               <div className="relative h-40 overflow-hidden">
-                <img src={c.thumbnail} alt={c.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img
+                  src={c.thumbnail}
+                  alt={c.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink-900/70 to-transparent" />
                 <div className="absolute bottom-3 left-4 flex items-center gap-2 text-white">
                   <Award size={20} className="text-amber-300" />
@@ -33,10 +40,16 @@ export default function CertificatesPage() {
                   <span className="font-mono">{c.credentialId}</span>
                 </div>
                 <div className="flex gap-2 mt-4">
-                  <button className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-700 transition">
+                  <button
+                    onClick={() => showToast(`Downloading "${c.title}" certificate...`)}
+                    className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-700 transition"
+                  >
                     <Download size={14} /> Download
                   </button>
-                  <button className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg border border-ink-100 text-ink-700 text-xs font-semibold hover:bg-ink-50 transition">
+                  <button
+                    onClick={() => showToast(`Verifying credential ${c.credentialId}...`)}
+                    className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg border border-ink-100 text-ink-700 text-xs font-semibold hover:bg-ink-50 transition"
+                  >
                     <ExternalLink size={14} /> Verify
                   </button>
                 </div>

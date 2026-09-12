@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/layout/Layout';
+import Toast from './components/ui/Toast';
 import Dashboard from './pages/Dashboard';
 import MyCoursesPage from './pages/MyCourses';
 import AssignmentsPage from './pages/Assignments';
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
+      <Toast />
     </BrowserRouter>
   );
 }
