@@ -4,7 +4,8 @@ A student-facing dashboard for an LMS, built as a portfolio project. It covers t
 
 The data is mocked, so everything runs standalone without a backend.
 
-**Live demo:** [https://netcore-learn.vercel.app/](#) · **Repo:** [https://github.com/vaibhav-salve-dev/LMS_netcoreInfo](#)
+**Live demo:** [https://netcore-learn.vercel.app/]  
+**Repo:** [https://github.com/vaibhav-salve-dev/LMS_netcoreInfo](#)
 
 ---
 
