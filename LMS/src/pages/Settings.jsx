@@ -80,17 +80,6 @@ export default function SettingsPage() {
         </div>
       </div>
 
-      {/* Preferences */}
-      <div className="card p-5 lg:p-6">
-        <h2 className="text-lg font-bold text-ink-900 mb-5">Preferences</h2>
-        <div className="flex items-center justify-between py-2">
-          <div>
-            <p className="text-sm font-medium text-ink-900">Dark mode</p>
-            <p className="text-xs text-ink-500 mt-0.5">Use dark theme (coming soon)</p>
-          </div>
-          <Toggle enabled={prefs.darkMode} onChange={(v) => setPrefs({ ...prefs, darkMode: v })} />
-        </div>
-      </div>
     </div>
   );
 }

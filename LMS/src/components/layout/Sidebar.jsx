@@ -37,7 +37,7 @@ export default function Sidebar({ open, onClose }) {
             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
               <GraduationCap size={20} className="text-white" />
             </div>
-            <span className="text-lg font-bold text-ink-900">EduFlow</span>
+            <span className="text-lg font-bold text-ink-900">Netcore Learn</span>
           </div>
           <button onClick={onClose} className="lg:hidden text-ink-500 hover:text-ink-900">
             <X size={20} />
