@@ -70,16 +70,7 @@ export default function Sidebar({ open, onClose }) {
           })}
         </nav>
 
-        {/* Upgrade card */}
-        <div className="p-4">
-          <div className="rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 p-4 text-white">
-            <p className="text-sm font-semibold">Upgrade to Pro</p>
-            <p className="text-xs text-white/80 mt-1">Unlock unlimited courses and certificates.</p>
-            <button className="mt-3 w-full py-2 rounded-lg bg-white text-indigo-600 text-xs font-semibold hover:bg-white/90 transition">
-              Upgrade Now
-            </button>
-          </div>
-        </div>
+        
       </aside>
     </>
   );
