@@ -1,8 +1,8 @@
 export const student = {
-  name: 'Aarav Sharma',
-  firstName: 'Aarav',
+  name: 'Vaibhav Salve',
+  firstName: 'Vaibhav',
   role: 'Student',
-  email: 'aarav.sharma@email.com',
+  email: 'vaibhavsalve@email.com',
   avatar: 'https://i.pravatar.cc/150?img=12',
   level: 'Intermediate',
   streak: 12,
