@@ -22,7 +22,7 @@ The dashboard has a sidebar and a top bar, and everything lives inside that shel
 - **Certificates** — cards for earned certificates with download/verify buttons.
 - **Settings** — profile fields, notification toggles, and a preferences section.
 
-The header has a working search input (UI only), a notifications dropdown, and a profile menu.
+The header has a working search input, a notifications dropdown, and a profile menu.
 
 ## Tech
 
